@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        /*
+ÖDEV1
+1.indexde olan verinin şifresi değiştirilecek ve ardından oluşturulan şifrenin uzunluğu konsola bastırılacak.
+2.indexde olan veriye yetki adında bir özellik eklenecek ve değeri true olacak.
+3.indexde hatalı olan veriyi düzelt küçük harfle yaz
+data dizinine nickname ve sifre formatına uygun olarak sona bir kullanıcı ekleyin.
+ÖDEV2
+Array.sort metodunu araştır.
+ÖDEV3
+Array.splice metodunu araştır.
+Ödev4
+data dizinine nickname ve sifre formatına uygun olarak başa bir kullanıcı ekleyin.
+data dizinine splice metodu kullanarak ortalara bir yerlere nickanme ve sifre formatına uygun olarak bir eleman ekle
+ÖDEV5
+ad,soyad,ülke,yetenekler arrray olacak, string içinde doğumtarihi içeren bir obje oluşturun.
+
+*/
+var data =
+[
+ {nickname:"_omer", sifre: "1234x"},
+ {nickname:"enes1", sifre:"2345"},
+ {nickname:"İSMO", sifre:"897"}
+]
+//ÖDEV1
+//1.Soru
+var sifredegistir = data[0].sifre.replace('1234x','123456789');
+console.log(sifredegistir.length)
+console.log(data)
+
+//2.Soru 
+var yetkiEkle = {yetki: true};
+var yetki =Object.assign(data[1],yetkiEkle)
+console.log(data)
+//3.soru
+var kucukHarf = data[2].nickname.toLocaleLowerCase();
+console.log(kucukHarf);
+var kullaniciekle = {nickname:"hayri",sifre:"56789"}
+data.push(kullaniciekle);
+console.log(data)
+
+// ÖDEV2:sort()=> alfabetik sıralama yapar
+var meyveler =["elma","armut","kiraz","erik","visne","karpuz","kayisi","bogurtlen","seftali","kavun"]
+meyveler.sort();
+console.log(meyveler);
+
+//ÖDEV3 splice()=> dizinin istediğin yerine ekleme ve çıkarma yapabilir
+var odevDizi =["elma","armut","kiraz","erik","visne","karpuz","kayisi","bogurtlen","seftali","kavun"]
+console.log("Silinmeden önceki:", odevDizi);
+odevDizi.splice(5,1);
+console.log("Silindikten Sonraki:",odevDizi);
+
+//ÖDEV4
+var sonaKullaniciEkle = {nickname:"aslan",sifre:"564789"}
+data.unshift(sonaKullaniciEkle);
+console.log(data);
+var ortayaKullaniciEkle = {nickname:"ethem",sifre:"5189"}
+data.splice(3,0,ortayaKullaniciEkle);
+console.log(data);
+
+//ÖDEV5
+var kisiler =
+{
+    ad:"",
+    soyad:"Gulec",
+    ülke:"Turkiye",
+    yetenekler:[],
+    dogumtarihi:"01.11.1998",
+}
+kisiler.ad ="ismail";
+kisiler.yetenekler.push('yurumek','kosmak')
+console.log(kisiler)
+    </script>
+</body>
+</html>

@@ -37,17 +37,16 @@ var data =
 ]
 //ÖDEV1
 //1.Soru
-var sifredegistir = data[0].sifre.replace('1234x','123456789');
-console.log(sifredegistir.length)
-console.log(data)
+data[0].sifre = "123456";
+console.log(data[0].sifre.length);
 
 //2.Soru 
 var yetkiEkle = {yetki: true};
 var yetki =Object.assign(data[1],yetkiEkle)
 console.log(data)
 //3.soru
-var kucukHarf = data[2].nickname.toLocaleLowerCase();
-console.log(kucukHarf);
+data[2].nickname = data[2].nickname.toLowerCase()
+console.log(data)
 var kullaniciekle = {nickname:"hayri",sifre:"56789"}
 data.push(kullaniciekle);
 console.log(data)
